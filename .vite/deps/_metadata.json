@@ -1,0 +1,40 @@
+{
+  "hash": "881554b4",
+  "configHash": "7630f919",
+  "lockfileHash": "73dd0089",
+  "browserHash": "aee36adb",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "60ceda99",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "15a7814e",
+      "needsInterop": true
+    },
+    "text-readability": {
+      "src": "../../node_modules/text-readability/main.js",
+      "file": "text-readability.js",
+      "fileHash": "068ec2f4",
+      "needsInterop": false
+    },
+    "react-pdftotext": {
+      "src": "../../node_modules/react-pdftotext/index.js",
+      "file": "react-pdftotext.js",
+      "fileHash": "317cf618",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PIS6TEUG": {
+      "file": "chunk-PIS6TEUG.js"
+    },
+    "chunk-MY6ZM4EU": {
+      "file": "chunk-MY6ZM4EU.js"
+    }
+  }
+}

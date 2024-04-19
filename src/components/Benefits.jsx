@@ -2,7 +2,7 @@ const BenefitItemsArray = [
   {
     icon: '🚀',
     title: 'Easy to use',
-    description: 'Simply copy and paste or upload your document',
+    description: 'Simply copy and paste your document',
   },
   {
     icon: '🔒',

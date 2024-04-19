@@ -1,7 +1,7 @@
 const StepContent = [
   {
     number: '1.',
-    title: 'Upload or paste and copy your cover letter',
+    title: 'Paste your cover letter in prepared text area',
   },
   {
     number: '2.',
@@ -14,7 +14,7 @@ const StepContent = [
   },
   {
     number: '4.',
-    title: 'Compare the original text with the improved version',
+    title: 'Compare the original text with the AI powered version',
   },
   {
     number: '5.',

@@ -1,37 +1,35 @@
 import { useState, useEffect } from 'react';
-import pdfToText from 'react-pdftotext';
 
 const Input = ({ onSubmit, aiResponse }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [fileContent, setFileContent] = useState(null);
+  // const [selectedFile, setSelectedFile] = useState(null);
+  // const [fileContent, setFileContent] = useState(null);
   const [inputValueBefore, setInputValueBefore] = useState('');
   const [copied, setCopied] = useState(false);
   const [aiResponsePassed, setAiResponsePassed] = useState('');
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
 
-    if (file) {
-      setSelectedFile(file);
+  //   if (file) {
+  //     setSelectedFile(file);
 
-      pdfToText(file)
-        .then((text) => {
-          setFileContent(text);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
+  //     pdfToText(file)
+  //       .then((text) => {
+  //         setFileContent(text);
+  //         setInputValueBefore(text);
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //       });
+  //   }
+  // };
 
   // @TODO add error handling for empty fileContent or incorrect file type
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (selectedFile) {
-      onSubmit(fileContent);
-    } else if (inputValueBefore) {
+    if (inputValueBefore) {
       onSubmit(inputValueBefore);
     } else {
       alert('No file or text input');
@@ -48,48 +46,13 @@ const Input = ({ onSubmit, aiResponse }) => {
       className='w-full flex flex-col bg-gray-200 relative mb-20'
     >
       <h2 className='mx-auto text-2xl font-medium my-5'>Check Your Score</h2>
-      <div className='flex items-center justify-center w-9/12 mx-auto'>
-        <label
-          htmlFor='dropzone-file'
-          className='flex flex-col items-center justify-center w-9/12 h-64 border-2 border-gray-900 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-100 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600'
-        >
-          <div className='flex flex-col items-center justify-center pt-5 pb-6'>
-            <svg
-              className='w-8 h-8 mb-4 text-gray-500 dark:text-gray-400'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 20 16'
-            >
-              <path
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2'
-              />
-            </svg>
-            <p className='mb-2 text-sm text-gray-500 dark:text-gray-400 text-center'>
-              <span className='font-semibold'>Click to upload</span> or drag and
-              drop Cover Letter
-            </p>
-            <p className='text-xs text-gray-500 dark:text-gray-400'>.PDF</p>
-          </div>
-          <input
-            id='dropzone-file'
-            type='file'
-            className='hidden'
-            onChange={handleFileChange}
-          />
-        </label>
-      </div>
       <div className='flex flex-col md:flex-row w-full mt-5 justify-center'>
         <div className='flex flex-col flex-1 mb-4 md:mb-10 mt-10 justify-center max-w-xl'>
           <label
             htmlFor='large-input'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-black mx-2 md:mx-5 text-center'
           >
-            Enter your text
+            Your text
           </label>
           <textarea
             type='text'
@@ -103,8 +66,6 @@ const Input = ({ onSubmit, aiResponse }) => {
               type='button'
               className='rounded bg-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-gray-600'
               onClick={() => {
-                setSelectedFile(null);
-                setFileContent(null);
                 setInputValueBefore('');
               }}
             >

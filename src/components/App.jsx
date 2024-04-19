@@ -68,7 +68,8 @@ function App() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer`,
+        //ADD API KEY AFTER BEARER
+        Authorization: `Bearer `,
       },
       body: JSON.stringify({
         model: 'gpt-4-turbo',
@@ -79,7 +80,7 @@ function App() {
           },
           {
             role: 'user',
-            content: `The Flesch–Kincaid readability tests are readability tests designed to indicate how difficult a passage in English is to understand. There are two tests: the Flesch Reading-Ease, and the Flesch–Kincaid Grade Level. Although they use the same core measures (word length and sentence length), they have different weighting factors. It is calculated using the formula: 206.835 - 1.015 * (total words / total sentences) - 84.6 * (total syllables / total words). The target score range is 50 to 69. Please improve the text, correct the grammar, and adjust the punctuation. The text to be improved is: ${textToImprove}. Give only improved text without any additional information.`,
+            content: `The Flesch–Kincaid readability tests are readability tests designed to indicate how difficult a passage in English is to understand. There are two tests: the Flesch Reading-Ease, and the Flesch–Kincaid Grade Level. Although they use the same core measures (word length and sentence length), they have different weighting factors. It is calculated using the formula: 206.835 - 1.015 * (total words / total sentences) - 84.6 * (total syllables / total words). The target score range is 50 to 69. Please improve the text, correct the grammar, and adjust the punctuation. The text to be improved is: ${textToImprove}. Give only improved text without any additional information. Return text with no special characters and no empty line breaks.`,
           },
         ],
       }),
@@ -113,11 +114,11 @@ function App() {
       {isFormSubmitted && aiResponse === '' ? (
         <div className='mt-4 text-center mb-20'>
           <p className='mb-4 text-lg font-medium text-3xl font-bold text-gray-900 sm:text-4xl'>
-            {results.fleschReadingEase <= 80 || aiResponse
+            {results.fleschReadingEase <= 70 || aiResponse
               ? 'Want to have a better score?'
               : 'Great job!'}
           </p>
-          {results.fleschReadingEase <= 80 && (
+          {results.fleschReadingEase <= 70 && (
             <button
               className='px-4 py-2 bg-blue-500 text-white rounded-md'
               onClick={handleAskAi}

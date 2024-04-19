@@ -24,15 +24,16 @@ const Hero = () => {
               <p className='mt-4 text-gray-600'>
                 Do you want to check how easy it is for recruiters to read your
                 Cover Letter? With the help of our cover letter readability
-                checker and enhancer you will get the AI powered suggestions to
-                improve your document in a few simple steps!
+                checker you will get the AI powered suggestions to improve your
+                document in a few simple steps based on Flesch Reading Ease
+                Score!
               </p>
 
               <a
                 href='#form'
                 className='mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500'
               >
-                Check your Cover Letter
+                Check your Cover Letter Score
               </a>
             </div>
           </div>
